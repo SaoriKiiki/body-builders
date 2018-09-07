@@ -1,0 +1,7 @@
+<%= form_for [@user] do |f| %>
+  <div class="form-group">
+      Name: <%= f.text_field :name %><br/>
+      Nickname: <%= f.text_field :nickname %><br/>
+      </div>
+    <%= f.submit "Create", class: "btn btn-primary" %>
+<%end%>

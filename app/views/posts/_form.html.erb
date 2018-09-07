@@ -1,0 +1,9 @@
+
+<%= form_for [@user, @post] do |f| %>
+  <div class="form-group">
+      Content: <%= f.text_field :caption %><br/>
+      <%= f.label :cover %>
+      <%= f.file_field :cover %>
+      </div>
+    <%= f.submit "Create", class: "btn btn-primary" %>
+<%end%>

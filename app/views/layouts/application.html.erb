@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bb</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+  </head>
+
+  <nav class = "espacio">
+
+    <% if user_signed_in? %>
+      <div><%= current_user.email %></div>
+      <div > <%= link_to "Log out", destroy_user_session_path, method: :delete %></div>
+      <% else %>
+      <div > <%= link_to "Sign Up", new_user_registration_path %></div>
+      <div > <%= link_to "Login", new_user_session_path %></div>
+    <% end %>
+    <%= yield %>
+
+  </nav>
+</html>
