@@ -1,10 +1,8 @@
 <h3 class = "espacio"> Lista de usuarios </h3>
-
-<div class=" espacio table-responsive">
-<table class="table">
+<table class="espacio table">
   <thead>
     <tr>
-      <th scope = "col">id</th>
+      <th>id</th>
       <th scope = "col">Name</th>
       <th scope = "col">Nickname</th>
       <th scope = "col">Email</th>
@@ -14,25 +12,35 @@
         <% @users.each do |user| %>
           <tr>
             <td><%=user.id%>  </td>
-            <td><%= best_in_place user, :name, as: :input %></td>
-            <td> <%=user.nickname%></td>
-            <td><%=user.email%></td>
+            <td><%= best_in_place user, :name, :inner_class => "input_field", :as => :input, :ok_button  => "Save"  %></td>
+            <td> <%=best_in_place user, :nickname, :inner_class => "input_field"%></td>
+            <td> <%=best_in_place user, :email, :inner_class => "input_field"%></td>
           </tr>
         <% end %>
   </tbody>
 </table>
-</div>
+
 
 <h3 class = "espacio"> Lista de categorias </h3>
-<table class="table">
-  <div class="container">
-    <div class="row">
-      <div class="col espacio">
+<table class="espacio table">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th scope = "col">Name</th>
+      <th scope = "col">Perfil</th>
+      <th scope = "col">Peso</th>
+    </tr>
+  </thead>
+  <tbody>
+        <% @users.each do |user| %>
         <% @categorias.each do |categoria| %>
-          <div><%=categoria.peso%></div>
-          <% end %>
-        </div>
-      </div>
-    </div>
+          <tr>
+            <td><%=user.id%>  </td>
+            <td><%= best_in_place user, :name, :inner_class => "input_field", :as => :input, :ok_button  => "Save"  %></td>
+            <td> <%=best_in_place categoria, :peso, :inner_class => "input_field"%></td>
+            <td> <%=best_in_place categoria, :perfil, :inner_class => "input_field"%></td>
+          </tr>
+        <% end %>
+        <% end %>
+  </tbody>
 </table>
-</div>
