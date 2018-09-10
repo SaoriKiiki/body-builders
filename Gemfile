@@ -42,7 +42,7 @@ gem "jquery-ui-rails"
 gem 'bootstrap', '~>4.0.0'
 gem 'best_in_place', '~> 3.0.1'
 group :development, :test do
-
+  gem 'sqlite3'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
